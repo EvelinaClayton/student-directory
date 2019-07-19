@@ -16,10 +16,8 @@ def print_header
   puts "-------------------"
 end
 def print(students)
-  puts "Collect student's name(s) beginning with this letter:"
-  first_letter = gets.chomp
     students.each_with_index do |student, index|
-      if student[:name][0] == first_letter
+      if student[:name].length < 12
         puts "#{index +1}. #{student[:name]} (#{student[:cohort]} cohort)"
       end
     end
