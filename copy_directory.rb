@@ -11,17 +11,21 @@ students = [
   {name: "Joffrey Baratheon", cohort: :november},
   {name: "Norman Bates", cohort: :november},
 ]
+
 def print_header
   puts "The students of Villains Academy"
   puts "-------------------"
 end
+
 def print(students)
-    students.each_with_index do |student, index|
-      if student[:name].length < 12
-        puts "#{index +1}. #{student[:name]} (#{student[:cohort]} cohort)"
-      end
-    end
+  counter = 0
+
+  while counter < students.length
+    puts students[counter][:name]
+    counter += 1
+  end
 end
+
 def print_footer(names)
   puts "Overall, we have #{names.count} great students"
 end
@@ -39,7 +43,7 @@ end
 #   students
 # end
 #
-# students = input_students
+# # students = input_students
 print_header
 print(students)
 print_footer(students)
